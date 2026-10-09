@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CNF and DNF | Maths Assignment</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#182230;--muted:#657184;--accent:#5b55d9;--line:#e3e8f0;--good:#16794b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{background:linear-gradient(135deg,#282568,#625be6);color:white;padding:42px 20px 32px}header .wrap,main{max-width:1000px;margin:auto}header p{max-width:720px;color:#e8e7ff}h1{line-height:1.15;font-size:clamp(2rem,5vw,3.2rem);margin:10px 0}h2{margin-top:0}nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}nav a{color:white;text-decoration:none;border:1px solid #ffffff66;border-radius:999px;padding:7px 13px;font-size:.92rem}main{padding:22px 16px 60px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin:18px 0;box-shadow:0 6px 20px #1e293b08}.tag{color:var(--accent);font-weight:750;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em}.formula{background:#f1f2ff;border-radius:12px;padding:14px;text-align:center;font-size:1.2rem;font-weight:650;overflow-wrap:anywhere;margin:12px 0}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.mini{background:#fafbff;border:1px solid var(--line);border-radius:12px;padding:16px}table{border-collapse:collapse;width:100%;margin:12px 0}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:center}th{background:#f3f5fa}button,select{font:inherit;border-radius:10px;padding:10px 14px;border:1px solid #d4d9e5;background:white;color:var(--ink)}button{background:var(--accent);border-color:var(--accent);color:white;font-weight:650;cursor:pointer}button.secondary{background:white;color:var(--accent)}button:disabled{opacity:.45;cursor:not-allowed}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.result{padding:12px;border-radius:10px;background:#f0faf5;margin-top:12px}.question{padding:14px 0;border-bottom:1px solid var(--line)}label{display:block;padding:4px 0;cursor:pointer}.score{font-size:1.2rem;font-weight:750}footer{text-align:center;padding:24px;color:var(--muted)}.stepcount{font-size:.9rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="tag" style="color:#d7d5ff">Interactive Mathematics Assignment</div>
+<h1>Conjunctive Normal Form (CNF) &amp; Disjunctive Normal Form (DNF)</h1>
+<p>Learn propositional logic through clear definitions, worked examples, step-by-step conversions, truth tables, and interactive exercises.</p>
+<nav><a href="#definitions">Definitions</a><a href="#examples">Examples</a><a href="#lab">Proof Lab</a><a href="#experiment">Experiment</a><a href="#exercises">Exercises</a></nav>
+</div></header>
+<main>
+<section class="card" id="definitions"><div class="tag">01 · Learn</div><h2>Definitions</h2>
+<div class="grid">
+<div class="mini"><h3>Conjunctive Normal Form (CNF)</h3><p>A formula in CNF is an AND (∧) of clauses, where each clause is an OR (∨) of literals.</p><div class="formula">(P ∨ Q) ∧ (¬P ∨ R)</div><p class="muted">Think: AND of ORs.</p></div>
+<div class="mini"><h3>Disjunctive Normal Form (DNF)</h3><p>A formula in DNF is an OR (∨) of terms, where each term is an AND (∧) of literals.</p><div class="formula">(P ∧ Q) ∨ (¬P ∧ R)</div><p class="muted">Think: OR of ANDs.</p></div>
+</div>
+<p><b>Literal:</b> a proposition such as P or its negation ¬P. <b>Clause:</b> a disjunction of literals. <b>Term:</b> a conjunction of literals.</p>
+<h3>Important logical laws</h3>
+<table><thead><tr><th>Law</th><th>Equivalent expression</th></tr></thead><tbody>
+<tr><td>De Morgan's law</td><td>¬(P ∧ Q) ≡ ¬P ∨ ¬Q</td></tr><tr><td>De Morgan's law</td><td>¬(P ∨ Q) ≡ ¬P ∧ ¬Q</td></tr>
+<tr><td>Distribute OR over AND</td><td>P ∨ (Q ∧ R) ≡ (P ∨ Q) ∧ (P ∨ R)</td></tr>
+<tr><td>Distribute AND over OR</td><td>P ∧ (Q ∨ R) ≡ (P ∧ Q) ∨ (P ∧ R)</td></tr>
+<tr><td>Double negation</td><td>¬¬P ≡ P</td></tr></tbody></table>
+</section>
+<section class="card" id="examples"><div class="tag">02 · Worked examples</div><h2>Step-by-step examples</h2>
+<h3>Example 1: Convert to CNF</h3><p>Given: P ∨ (Q ∧ R)</p><p>Apply the distributive law: distribute P ∨ across the conjunction.</p><div class="formula">P ∨ (Q ∧ R) ≡ (P ∨ Q) ∧ (P ∨ R)</div><p><b>Answer:</b> (P ∨ Q) ∧ (P ∨ R), which is CNF (an AND of OR clauses).</p>
+<hr style="border:0;border-top:1px solid var(--line);margin:22px 0">
+<h3>Example 2: Convert to DNF</h3><p>Given: P ∧ (Q ∨ R)</p><p>Apply the distributive law: distribute P ∧ across the disjunction.</p><div class="formula">P ∧ (Q ∨ R) ≡ (P ∧ Q) ∨ (P ∧ R)</div><p><b>Answer:</b> (P ∧ Q) ∨ (P ∧ R), which is DNF (an OR of AND terms).</p>
+</section>
+<section class="card" id="lab"><div class="tag">03 · Interactive proof lab</div><h2>Explore a conversion</h2><p>Choose a problem, then reveal the solution step.</p>
+<div class="controls"><label for="problem"><b>Problem:</b></label><select id="problem"><option value="cnf">Convert to CNF</option><option value="dnf">Convert to DNF</option><option value="demorgan">Use De Morgan's law</option></select><button id="next">Show next step</button><button id="reset" class="secondary">Reset</button></div>
+<div class="formula" id="labFormula">P ∨ (Q ∧ R)</div><p id="labNote" aria-live="polite">Step 1: Start with the original expression.</p><div class="stepcount" id="stepCount">Step 1 of 2</div>
+</section>
+<section class="card" id="experiment"><div class="tag">04 · Experiment</div><h2>Truth-table explorer</h2><p>Change P and Q to see the value of P ∨ Q. OR is true if at least one proposition is true.</p>
+<div class="controls"><label for="pValue">P:</label><select id="pValue"><option value="T">True</option><option value="F">False</option></select><label for="qValue">Q:</label><select id="qValue"><option value="T">True</option><option value="F">False</option></select></div>
+<div class="result" id="truthResult" aria-live="polite">P ∨ Q = TRUE</div>
+<h3>Complete truth table</h3><table><thead><tr><th>P</th><th>Q</th><th>P ∨ Q</th></tr></thead><tbody><tr><td>T</td><td>T</td><td>T</td></tr><tr><td>T</td><td>F</td><td>T</td></tr><tr><td>F</td><td>T</td><td>T</td></tr><tr><td>F</td><td>F</td><td>F</td></tr></tbody></table>
+</section>
+<section class="card" id="exercises"><div class="tag">05 · Test yourself</div><h2>Exercises</h2><p>Select one answer for each question, then check your answers.</p><form id="quiz">
+<div class="question"><b>1. Which expression is in CNF?</b><label><input type="radio" name="q0" value="0"> P ∧ (Q ∨ R)</label><label><input type="radio" name="q0" value="1"> (P ∨ Q) ∧ (¬P ∨ R)</label><label><input type="radio" name="q0" value="2"> P ∨ (Q ∧ R)</label><p class="muted" id="feedback0"></p></div>
+<div class="question"><b>2. Which expression is in DNF?</b><label><input type="radio" name="q1" value="0"> (P ∧ Q) ∨ (¬P ∧ R)</label><label><input type="radio" name="q1" value="1"> (P ∨ Q) ∧ R</label><label><input type="radio" name="q1" value="2"> P ∨ (Q ∧ R)</label><p class="muted" id="feedback1"></p></div>
+<div class="question"><b>3. What is the CNF of P ∨ (Q ∧ R)?</b><label><input type="radio" name="q2" value="0"> (P ∨ Q) ∧ (P ∨ R)</label><label><input type="radio" name="q2" value="1"> (P ∧ Q) ∨ (P ∧ R)</label><label><input type="radio" name="q2" value="2"> P ∧ Q ∧ R</label><p class="muted" id="feedback2"></p></div>
+<div class="question"><b>4. Simplify ¬(P ∧ Q).</b><label><input type="radio" name="q3" value="0"> ¬P ∧ ¬Q</label><label><input type="radio" name="q3" value="1"> ¬P ∨ ¬Q</label><label><input type="radio" name="q3" value="2"> P ∨ Q</label><p class="muted" id="feedback3"></p></div>
+<div class="controls"><button type="submit">Check answers</button><button type="button" class="secondary" id="clearQuiz">Try again</button></div><p class="score" id="score" aria-live="polite"></p>
+</form></section>
+<section class="card"><div class="tag">Summary</div><h2>Remember</h2><ul><li><b>CNF:</b> AND of OR clauses.</li><li><b>DNF:</b> OR of AND terms.</li><li>Use distributive laws to convert between forms.</li><li>Use De Morgan's laws to push negations inward.</li><li>Equivalent formulas have the same truth value for every assignment.</li></ul></section>
+</main><footer>Maths Assignment · Propositional Logic · CNF and DNF</footer>
+<script>
+const labData={
+ cnf:[["P ∨ (Q ∧ R)","Step 1: Start with the original expression."],["(P ∨ Q) ∧ (P ∨ R)","Step 2: Distribute OR over AND. This is CNF."]],
+ dnf:[["P ∧ (Q ∨ R)","Step 1: Start with the original expression."],["(P ∧ Q) ∨ (P ∧ R)","Step 2: Distribute AND over OR. This is DNF."]],
+ demorgan:[["¬(P ∧ Q)","Step 1: Negation applies to the whole conjunction."],["¬P ∨ ¬Q","Step 2: Negate each literal and change AND to OR."]]
+};
+let labStep=0;const problem=document.getElementById('problem');
+function drawLab(){const data=labData[problem.value];document.getElementById('labFormula').textContent=data[labStep][0];document.getElementById('labNote').textContent=data[labStep][1];document.getElementById('stepCount').textContent=`Step ${labStep+1} of ${data.length}`;document.getElementById('next').disabled=labStep===data.length-1;}
+problem.addEventListener('change',()=>{labStep=0;drawLab()});document.getElementById('next').addEventListener('click',()=>{labStep=Math.min(labStep+1,labData[problem.value].length-1);drawLab()});document.getElementById('reset').addEventListener('click',()=>{labStep=0;drawLab()});drawLab();
+function updateTruth(){const p=document.getElementById('pValue').value==='T',q=document.getElementById('qValue').value==='T';document.getElementById('truthResult').textContent=`P ∨ Q = ${p||q?'TRUE':'FALSE'}`;}
+document.getElementById('pValue').addEventListener('change',updateTruth);document.getElementById('qValue').addEventListener('change',updateTruth);updateTruth();
+const correct=[1,0,0,1],why=[
+"CNF is an AND of OR clauses.",
+"DNF is an OR of AND terms.",
+"Distribute OR over AND.",
+"De Morgan's law changes AND to OR and negates both literals."
+];
+document.getElementById('quiz').addEventListener('submit',e=>{e.preventDefault();let score=0;correct.forEach((ans,i)=>{const chosen=document.querySelector(`input[name="q${i}"]:checked`);const f=document.getElementById(`feedback${i}`);if(chosen&&Number(chosen.value)===ans){score++;f.textContent='Correct! '+why[i];f.style.color='var(--good)';}else{f.textContent='Correct answer: '+(ans===0?'Option A':ans===1?'Option B':'Option C')+'. '+why[i];f.style.color='#b42318';}});document.getElementById('score').textContent=`Your score: ${score} / ${correct.length}`;});
+document.getElementById('clearQuiz').addEventListener('click',()=>{document.getElementById('quiz').reset();correct.forEach((_,i)=>{document.getElementById(`feedback${i}`).textContent='';});document.getElementById('score').textContent='';});
+</script>
+</body></html>
